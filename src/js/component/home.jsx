@@ -119,9 +119,9 @@ function Home () {
 
 	const Mapping = newTasks.map((task, index) => {
 		return (
-			<li key={index} className='my-2 list-group-item'>
+			<li key={index} className='my-2 list-group-item taskDeleteButtonHover'>
 				{task.label}
-				<button className="btn-close btn-close-dark float-end" key={index} type="button" onClick={(event) => deleteTask(index)} ></button>
+				<button className="btn-close btn-close-dark float-end taskDeleteButton" key={index} type="button" onClick={(event) => deleteTask(index)} ></button>
 			</li>
 		)
 	})

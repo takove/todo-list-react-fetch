@@ -1,4 +1,4 @@
-.taskDeleteButton:hover {
+.taskDeleteButtonHover:hover > .taskDeleteButton{
     visibility:visible;
     opacity: 1;
 }
