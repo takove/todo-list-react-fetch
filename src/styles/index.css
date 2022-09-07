@@ -1,4 +1,13 @@
+.taskDeleteButton:hover {
+    visibility:visible;
+    opacity: 1;
+}
+.taskDeleteButton {
+    visibility: hidden; 
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
 
+}
 /* 
 
     You can write your own styles here...
