@@ -10,9 +10,7 @@ function Home () {
 
 	const isUserReady = async () => {
 		try {
-			let response = await fetch(user,{
-			headers: {"Content-Type" : "application/json"}
-		})
+			let response = await fetch(user)
 			if (response.ok) {
 				setUserReady(true),
 				console.log('User is already created isUserReady')
@@ -53,7 +51,7 @@ function Home () {
 	// submit function
 	async function submit (event) {
 		try {
-			if (event.key === 'Enter' && inputValue !== "") {
+			if (event.key === 'Enter' && inputValue.trim() !== "") {
 				if (newTasks.length === 0) {
 					setPending(true)
 				}
@@ -80,7 +78,6 @@ function Home () {
 		} catch (error) {
 			console.log(error)
 		}
-		console.log(newTasks)
 		
 	}
 	// deleting function
@@ -108,7 +105,6 @@ function Home () {
 			})
 			console.log(response)
 			if (response.ok) {
-				response.json()
 				await userCreation()
 				await isUserReady()
 			}
@@ -141,7 +137,7 @@ function Home () {
 			<div> {/* THIS ONE IS A VALID COMMENT */}
 				<div className=" row col-10 col-sm-8 col-md-7 col-lg-6 mx-auto justify-content-center text-center">
 					<h1>home tasks to do</h1>
-					<button className="btn my-3" onKeyDown={(e) => {}}>Click to delete all tasks</button>
+					<button className="btn my-3" onClick={(e) => {deleteUser()}}>Click to delete all tasks</button>
 				</div>
 				<div className="row col-10 col-sm-8 col-md-7 col-lg-6 mx-auto justify-content-center">
 					<input type="text"
